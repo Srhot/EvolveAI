@@ -1,0 +1,51 @@
+name: evolveai
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+
+  # Core scientific
+  - numpy=1.26.*
+  - scipy=1.11.*
+  - pandas=2.1.*
+
+  # PyTorch (CUDA 12.1 - RTX 5070 uyumlu)
+  - pytorch=2.1.*
+  - torchvision=0.16.*
+  - pytorch-cuda=12.1
+
+  # Visualization
+  - matplotlib=3.8.*
+  - plotly=5.18.*
+  - seaborn=0.13.*
+
+  # Pygame için sistem bağımlılıkları conda-forge'da
+  - pygame=2.5.*
+
+  # ML utilities
+  - scikit-learn=1.3.*
+  - tqdm
+  - pyyaml
+
+  # Development
+  - jupyter
+  - pytest
+  - black
+  - ruff
+
+  - pip:
+    # Gradio — conda'da bazen geride kalıyor, pip'ten
+    - gradio==4.19.2
+    # TensorBoard
+    - tensorboard
+    # Optuna (hyperparameter tuning - bonus özellik için)
+    - optuna==3.5.0
+    # Pretty CLI
+    - rich
+    # OpenAI Gym (Gymnasium - resmi takipçi)
+    - gymnasium==0.29.1

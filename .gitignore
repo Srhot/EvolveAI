@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Conda
+.conda/
+
+# Model checkpoints (büyük dosyalar)
+checkpoints/*.pt
+checkpoints/*.pkl
+checkpoints/*.pth
+
+# Replay'ler (büyük olabilir)
+replays/*.mp4
+replays/*.avi
+
+# Logs
+logs/tensorboard/
+logs/*.log
+*.log
+
+# Data
+data/
+*.csv
+*.parquet
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Sensitive
+.env
+*.key
+secrets/
