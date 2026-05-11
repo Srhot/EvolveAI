@@ -1,7 +1,5 @@
 name: evolveai
 channels:
-  - pytorch
-  - nvidia
   - conda-forge
   - defaults
 
@@ -14,17 +12,12 @@ dependencies:
   - scipy=1.11.*
   - pandas=2.1.*
 
-  # PyTorch (CUDA 12.1 - RTX 5070 uyumlu)
-  - pytorch=2.1.*
-  - torchvision=0.16.*
-  - pytorch-cuda=12.1
-
   # Visualization
   - matplotlib=3.8.*
   - plotly=5.18.*
   - seaborn=0.13.*
 
-  # Pygame için sistem bağımlılıkları conda-forge'da
+  # Pygame
   - pygame=2.5.*
 
   # ML utilities
@@ -39,13 +32,13 @@ dependencies:
   - ruff
 
   - pip:
-    # Gradio — conda'da bazen geride kalıyor, pip'ten
+    # PyTorch CUDA 12.8 — RTX 5070 Blackwell (SM 120) zorunlu
+    # conda pytorch kanalı yanlış versiyon çeker, pip kullan!
+    - --extra-index-url https://download.pytorch.org/whl/cu128
+    - torch
+    - torchvision
     - gradio==4.19.2
-    # TensorBoard
     - tensorboard
-    # Optuna (hyperparameter tuning - bonus özellik için)
     - optuna==3.5.0
-    # Pretty CLI
     - rich
-    # OpenAI Gym (Gymnasium - resmi takipçi)
     - gymnasium==0.29.1
